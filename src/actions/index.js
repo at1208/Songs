@@ -1,6 +1,5 @@
-import React from 'react';
-
-export const selectedSong = (song) => {
+ 
+export const selectSong = (song) => {
   return({
     type:'SELECTED SONG',
     payload: song
