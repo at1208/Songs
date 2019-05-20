@@ -1,14 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import {selectSong} from '../actions'
+import { selectSong } from '../actions'
 
 const SongList = (props) => {
-  console.log(props)
-  const SongList = props.songs.map((song)=> {
+   const SongList = props.songs.map((song)=> {
      return   <div key={song.name}>
               <h1 style={{ fontFamily: 'Amatic SC'}}>{song.name}
               <br />
-              <button style={{ backgroundColor: 'dodgerblue',
+              <button
+              onClick={() => props.selectSong(song)}
+               style={{ backgroundColor: 'dodgerblue',
                display: 'grid',
                color:'white',
               fontWeight:'bold'}}>
@@ -32,6 +33,6 @@ const SongList = (props) => {
 
 const mapStateToProp = (state) => {
 console.log(state)
-  return { songs: state.songs}
+  return { songs: state.songs }
 }
-export default connect(mapStateToProp, { selectSong })(SongList);
+export default connect(mapStateToProp, { selectSong: selectSong })(SongList);

@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
 
 
-
 const songsListReducer = () => {
   return ([
     { name:'Waving flag', duration:'4:08'},
